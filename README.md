@@ -1,6 +1,8 @@
 # Comunev
 User registration page created using angular 7 (cli)
 
+Download the demo-video from: http://bit.do/demo-vid-mahak
+
 ##Steps to run:
 1. Install NodeJS and NPM from https://nodejs.org/en/download/.
 2. Install Angular CLI by running 
