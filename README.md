@@ -15,4 +15,4 @@ Download the demo-video from: http://bit.do/demo-vid-mahak
 
 ```ng serve --open from the command line in the project root folder```
 
-6. Your browser should automatically open at http://localhost:4200 with the demo Angular 7 login page displayed.
+6. Your browser should automatically open at http://localhost:4200.
