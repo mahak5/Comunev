@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="window">
+        <div class="overlay">
+          <div class="content">
+            <div class="welcome">Welcome to Comunev!</div>
+            <div class="subtitle">
+              Register and meet your tribe!
+            </div>
+            <form
+              autocomplete="off"
+              class="content"
+              (ngSubmit)="onSubmit(form1)"
+              #form1="ngForm"
+            >
+              <div class="input-fields">
+                <input
+                  autocomplete="false"
+                  [(ngModel)]="user.Fname"
+                  #Fname="ngModel"
+                  type="text"
+                  name="Fname"
+                  placeholder="First Name"
+                  class="input-line full-width"
+                  required
+                />
+                <div *ngIf="Fname.invalid && (Fname.dirty || Fname.touched)">
+                  <p *ngIf="Fname.hasError('required')">
+                    <em>*Cannot be blank</em>
+                  </p>
+                </div>
+                <input
+                  autocomplete="false"
+                  type="text"
+                  name="Lname"
+                  [(ngModel)]="user.Lname"
+                  #Lname="ngModel"
+                  placeholder="Last Name"
+                  class="input-line full-width"
+                  required
+                />
+                <div *ngIf="Lname.invalid && (Lname.dirty || Lname.touched)">
+                  <p *ngIf="Lname.hasError('required')">
+                    <em>*Cannot be blank</em>
+                  </p>
+                </div>
+                <input
+                  autocomplete="false"
+                  type="text"
+                  name="Uname"
+                  [(ngModel)]="user.Uname"
+                  #Uname="ngModel"
+                  placeholder="Username"
+                  class="input-line full-width"
+                  required
+                />
+                <div *ngIf="Uname.invalid && (Uname.dirty || Uname.touched)">
+                  <p *ngIf="Uname.hasError('required')">
+                    <em>*Cannot be blank</em>
+                  </p>
+                </div>
+                <input
+                  autocomplete="false"
+                  type="password"
+                  name="Pass"
+                  [(ngModel)]="user.Pass"
+                  #Pass="ngModel"
+                  placeholder="Password"
+                  class="input-line full-width"
+                  required
+                  minlength="6"
+                />
+                <div *ngIf="Pass.invalid && (Pass.dirty || Pass.touched)">
+                  <p *ngIf="Pass.hasError('required')">
+                    <em>*Cannot be blank</em>
+                  </p>
+                  <p *ngIf="Pass.hasError('minlength')">
+                    <em>*Minimum 6 characters</em>
+                  </p>
+                </div>
+                <input
+                  autocomplete="false"
+                  type="text"
+                  name="Dob"
+                  [(ngModel)]="user.Dob"
+                  #Dob="ngModel"
+                  placeholder="Date of birth"
+                  class="input-line full-width"
+                  onfocus="(this.type='date')"
+                  onblur="(this.type='text')"
+                  required
+                />
+                <div *ngIf="Dob.invalid && (Dob.dirty || Dob.touched)">
+                  <p *ngIf="Dob.hasError('required')">
+                    <em>*Cannot be blank</em>
+                  </p>
+                </div>
+                <input
+                  autocomplete="false"
+                  type="text"
+                  name="Country"
+                  [(ngModel)]="user.Country"
+                  #Country="ngModel"
+                  placeholder="Country"
+                  class="input-line full-width"
+                  required
+                />
+                <div
+                  *ngIf="Country.invalid && (Country.dirty || Country.touched)"
+                >
+                  <p *ngIf="Country.hasError('required')">
+                    <em>*Cannot be blank</em>
+                  </p>
+                </div>
+              </div>
+              <div>
+                <button
+                  type="submit"
+                  name="submit"
+                  class="ghost-round full-width"
+                  [disabled]="form1.invalid"
+                >
+                  Sign Up!
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </body>
+</html>
